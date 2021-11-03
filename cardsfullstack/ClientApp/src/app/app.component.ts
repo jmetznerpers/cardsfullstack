@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Card } from './card';
 import { CardApiService } from './card-api.service';
 
 @Component({
@@ -8,6 +9,9 @@ import { CardApiService } from './card-api.service';
 export class AppComponent {
   title = 'app';
 
+  theCards: Card[] = null;
+  deck_id?: String = null;
+
   constructor(private cardapi: CardApiService) {
 
   }
@@ -16,7 +20,16 @@ export class AppComponent {
     this.cardapi.getDeck(
       result => {
         console.log(result);
+        this.deck_id = result[0].deck_id;
+        this.theCards = result;
       }
     )
+  }
+
+  getTwoCards() {
+    this.cardapi.getCards(this.deck_id,
+      result => {
+        this.theCards = result;
+      }    )
   }
 }

@@ -1,8 +1,15 @@
 <body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
-    <button (click)="getDeck()">Get Deck</button>
+    <button (click)="getDeck()">Get Deck</button><br/>
+    {{deck_id}}<br/>
+    <ng-container *ngIf="theCards">
+      <ng-container *ngFor="let card of theCards">
+        <img src="{{card.image}}" />
+      </ng-container>
+    </ng-container>
 
+    <button (click)="getTwoCards()">draw 2 more</button>
     <h1>stuff below is vs project</h1>
     <hr/>
     <router-outlet></router-outlet>
