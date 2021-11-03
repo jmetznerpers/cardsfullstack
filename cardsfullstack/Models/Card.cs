@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace cardsfullstack.Models
 {
+    [Table("Card")]
     public class Card
     {
+        [Key]
         public int id { get; set; }
         public string deck_id { get; set; }
         public string image { get; set; }
