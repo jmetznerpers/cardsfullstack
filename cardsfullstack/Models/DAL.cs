@@ -8,7 +8,8 @@ namespace cardsfullstack.Models
 {
     public class DAL
     {
-
         public static MySqlConnection DB;
+
+
     }
 }
