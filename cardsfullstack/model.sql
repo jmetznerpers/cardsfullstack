@@ -2,7 +2,7 @@
 
 use CardGame;
 
-create table Decks (
+create table Deck (
 deck_id varchar(20),
 is_current boolean,
 created_at datetime,
@@ -11,7 +11,7 @@ primary key (deck_id)
 
 );
 
-create table Cards (
+create table Card (
 id int not null auto_increment,
 deck_id varchar(20),
 image varchar(200),
