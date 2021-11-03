@@ -9,6 +9,6 @@ namespace cardsfullstack.Models
     {
         public string deck_id { get; set; }
         public int remaining { get; set; }
-        public List<CardResponse> cards { get; set; }
+        public IEnumerable<CardResponse> cards { get; set; }
     }
 }
