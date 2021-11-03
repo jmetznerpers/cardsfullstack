@@ -17,5 +17,18 @@ namespace cardsfullstack.Controllers
         {
             return await DAL.InitializeDeck();
         }
-    }
+
+        [HttpGet("deck")]
+        public async Task<IEnumerable<Card>> GetDeck()
+        {
+            return await DAL.InitializeDeck();
+        }
+
+        [HttpGet("cards/{id}")]
+        public async Task<IEnumerable<Card>> GetCards(string id)
+        {
+            return await DAL.DrawTwoCards(id);
+        } 
+
+    }   
 }
